@@ -13,5 +13,6 @@ Imports:
     ggplot2,
     grid,
     gridGeometry
-URL: https://github.com/botan/ggrounded
+URL: https://github.com/botan/ggrounded,
+    https://botan.github.io/ggrounded/
 BugReports: https://github.com/botan/ggrounded/issues
