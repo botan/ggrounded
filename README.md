@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/botan/ggrounded/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/botan/ggrounded/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 A mini-package for creating bar plots with rounded corners using
