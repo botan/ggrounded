@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-05-02T09:50Z
+last_built: 2023-05-02T10:00Z
 urls:
   reference: https://botan.github.io/ggrounded/reference
   article: https://botan.github.io/ggrounded/articles
