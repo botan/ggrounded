@@ -12,7 +12,8 @@ RoxygenNote: 7.2.3
 Imports: 
     ggplot2,
     grid,
-    gridGeometry
+    gridGeometry,
+    vdiffr
 URL: https://github.com/botan/ggrounded,
     https://botan.github.io/ggrounded/
 BugReports: https://github.com/botan/ggrounded/issues
