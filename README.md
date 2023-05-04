@@ -10,8 +10,6 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/botan/ggrounded/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/botan/ggrounded/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/botan/ggrounded/branch/main/graph/badge.svg)](https://app.codecov.io/gh/botan/ggrounded?branch=main)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/ggrounded)](https://CRAN.R-project.org/package=ggrounded)
 <!-- badges: end -->
 
 A mini-package for creating bar plots with rounded corners using
