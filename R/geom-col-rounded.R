@@ -1,6 +1,6 @@
 #' Bar plot with rounded corners
 #'
-#' @description This function creates a bar plot with rounded corners using
+#' @description Creates a bar plot with rounded corners using
 #'   ggplot2. It is an extension of the [ggplot2::geom_col()] function and
 #'   provides additional aesthetics for a more visually appealing output.
 #'
@@ -48,6 +48,7 @@
 #' @note The code in this function was adapted from a solution provided by
 #'   Stack Overflow user 'sthoch' in the following post: `https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar`
 #'
+#' @returns A ggplot object.
 #' @export
 #'
 #' @examples
