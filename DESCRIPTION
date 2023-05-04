@@ -1,6 +1,6 @@
 Package: ggrounded
 Title: Rounded Bar Plots
-Version: 0.0.1
+Version: 0.0.0.9000
 Authors@R: 
     person("Botan", "Ağın", , "aginbotan@gmail.com", role = c("aut", "cre"))
 Description: A mini-package for creating bar plots with rounded corners using
