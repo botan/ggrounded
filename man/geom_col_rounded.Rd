@@ -66,8 +66,11 @@ rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
 the default plot specification, e.g. \code{\link[ggplot2:borders]{ggplot2::borders()}}.}
 }
+\value{
+A ggplot object.
+}
 \description{
-This function creates a bar plot with rounded corners using
+Creates a bar plot with rounded corners using
 ggplot2. It is an extension of the \code{\link[ggplot2:geom_bar]{ggplot2::geom_col()}} function and
 provides additional aesthetics for a more visually appealing output.
 }
