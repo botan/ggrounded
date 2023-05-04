@@ -45,6 +45,9 @@
 #'   that define both data and aesthetics and shouldn't inherit behaviour from
 #'   the default plot specification, e.g. [ggplot2::borders()].
 #'
+#' @note The code in this function was adapted from a solution provided by
+#'   Stack Overflow user 'sthoch' in the following post: `https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar`
+#'
 #' @export
 #'
 #' @examples
