@@ -1,7 +1,7 @@
 #' Bar plot with rounded corners
 #'
 #' @description Creates a bar plot with rounded corners using
-#'   ggplot2. It is an extension of the [ggplot2::geom_col()] function and
+#'   'ggplot2'. It is an extension of the [ggplot2::geom_col()] function and
 #'   provides additional aesthetics for a more visually appealing output.
 #'
 #' @param mapping Set of aesthetic mappings created by [ggplot2::aes()]. If specified and

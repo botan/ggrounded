@@ -71,7 +71,7 @@ A ggplot object.
 }
 \description{
 Creates a bar plot with rounded corners using
-ggplot2. It is an extension of the \code{\link[ggplot2:geom_bar]{ggplot2::geom_col()}} function and
+'ggplot2'. It is an extension of the \code{\link[ggplot2:geom_bar]{ggplot2::geom_col()}} function and
 provides additional aesthetics for a more visually appealing output.
 }
 \note{
