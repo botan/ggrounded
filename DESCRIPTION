@@ -1,9 +1,9 @@
 Package: ggrounded
 Title: Rounded Bar Plots
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Botan", "Ağın", , "aginbotan@gmail.com", role = c("aut", "cre", "cph"))
-Description:  Creates bar plots with rounded corners using 'ggplot2'.
+Description: Creates bar plots with rounded corners using 'ggplot2'.
     The code in this package was adapted from a solution provided by 
     Stack Overflow user 'sthoch' in the following post:
     <https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar>.
