@@ -17,8 +17,13 @@ ggplot2.
 
 ## Installation
 
-You can install the development version of ggrounded from
-[GitHub](https://github.com/) with:
+Install the released version of ggrounded from CRAN:
+
+``` r
+install.packages("ggrounded")
+```
+
+Or install the development version from GitHub with:
 
 ``` r
 # install.packages("pak")

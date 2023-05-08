@@ -26,9 +26,15 @@ A mini-package for creating bar plots with rounded corners using ggplot2.
 
 ## Installation
 
-You can install the development version of ggrounded from [GitHub](https://github.com/) with:
+Install the released version of ggrounded from CRAN:
 
-``` r
+```{r, eval = FALSE}
+install.packages("ggrounded")
+```
+
+Or install the development version from GitHub with:
+
+```{r, eval = FALSE}
 # install.packages("pak")
 pak::pak("botan/ggrounded")
 ```
