@@ -32,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ggrounded</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +43,9 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -72,8 +75,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of ggrounded from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>Install the released version of ggrounded from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggrounded"</span><span class="op">)</span></span></code></pre></div>
+<p>Or install the development version from GitHub with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="http://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"botan/ggrounded"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -81,7 +87,7 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>This is a very basic example:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/botan/ggrounded" class="external-link">ggrounded</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
@@ -103,6 +109,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=ggrounded" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/botan/ggrounded/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/botan/ggrounded/issues" class="external-link">Report a bug</a></li>
 </ul>
