@@ -83,9 +83,10 @@ the default plot specification, e.g. \code{\link[ggplot2:borders]{ggplot2::borde
 A ggplot object.
 }
 \description{
-Creates a bar plot with rounded corners using
-'ggplot2'. It is an extension of the \code{\link[ggplot2:geom_bar]{ggplot2::geom_col()}} function and
-provides additional aesthetics for a more visually appealing output.
+Create a bar plot with rounded corners using
+'ggplot2'. \code{geom_col_rounded()} and \code{geom_bar_rounded()} are extensions of
+the \code{\link[ggplot2:geom_bar]{ggplot2::geom_col()}} and \code{\link[ggplot2:geom_bar]{ggplot2::geom_bar()}} functions and they
+provide additional aesthetics for more visually appealing outputs.
 }
 \note{
 The code in this function was adapted from a solution provided by
@@ -95,5 +96,8 @@ Stack Overflow user 'sthoch' in the following post: \url{`https://stackoverflow.
 library(ggplot2)
 
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
-geom_col_rounded()
+  geom_col_rounded()
+
+ggplot(mpg, aes(class)) +
+  geom_bar_rounded()
 }
