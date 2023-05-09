@@ -32,19 +32,33 @@ Or install the development version from GitHub with:
 pak::pak("botan/ggrounded")
 ```
 
-## Example
+## Usage
 
-This is a very basic example:
+There are two types of bar charts in ggplot2: `geom_bar()` and
+`geom_col()`. `geom_bar_rounded()` and `geom_col_rounded()` are wrappers
+on them for rounding the top corners. `geom_bar_rounded()` makes the
+height of the bar proportional to the number of cases in each group (or
+if the `weight` aesthetic is supplied, the sum of the weights).
 
 ``` r
 library(ggrounded)
 library(ggplot2)
 
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
-geom_col_rounded()
+  geom_col_rounded()
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example1-1.png" width="100%" />
+
+If you want the heights of the bars to represent values in the data, use
+`geom_col_rounded()` instead.
+
+``` r
+ggplot(mpg, aes(class)) +
+  geom_bar_rounded()
+```
+
+<img src="man/figures/README-example2-1.png" width="100%" />
 
 ## Code of Conduct
 
