@@ -76,7 +76,7 @@ provides additional aesthetics for a more visually appealing output.
 }
 \note{
 The code in this function was adapted from a solution provided by
-Stack Overflow user 'sthoch' in the following post: \verb{https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar}
+Stack Overflow user 'sthoch' in the following post: \url{`https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar`}
 }
 \examples{
 library(ggplot2)
