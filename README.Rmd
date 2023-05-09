@@ -48,15 +48,15 @@ There are two types of bar charts in ggplot2: `geom_bar()` and `geom_col()`. `ge
 library(ggrounded)
 library(ggplot2)
 
-ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
-  geom_col_rounded()
+ggplot(mpg, aes(class)) +
+  geom_bar_rounded()
 ```
 
  If you want the heights of the bars to represent values in the data, use `geom_col_rounded()` instead.
 
 ```{r example2}
-ggplot(mpg, aes(class)) +
-  geom_bar_rounded()
+ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+  geom_col_rounded()
 ```
 
 ## Code of Conduct

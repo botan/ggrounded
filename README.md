@@ -44,8 +44,8 @@ if the `weight` aesthetic is supplied, the sum of the weights).
 library(ggrounded)
 library(ggplot2)
 
-ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
-  geom_col_rounded()
+ggplot(mpg, aes(class)) +
+  geom_bar_rounded()
 ```
 
 <img src="man/figures/README-example1-1.png" width="100%" />
@@ -54,8 +54,8 @@ If you want the heights of the bars to represent values in the data, use
 `geom_col_rounded()` instead.
 
 ``` r
-ggplot(mpg, aes(class)) +
-  geom_bar_rounded()
+ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+  geom_col_rounded()
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
