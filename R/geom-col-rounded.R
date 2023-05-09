@@ -47,7 +47,7 @@
 #'   the default plot specification, e.g. [ggplot2::borders()].
 #'
 #' @note The code in this function was adapted from a solution provided by
-#'   Stack Overflow user 'sthoch' in the following post: \url{`https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar`}
+#'   Stack Overflow user 'sthoch' in the following post: \url{https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar}
 #'
 #' @returns A ggplot object.
 #' @export
