@@ -14,8 +14,7 @@ coverage](https://codecov.io/gh/botan/ggrounded/branch/main/graph/badge.svg)](ht
 status](https://www.r-pkg.org/badges/version/ggrounded)](https://CRAN.R-project.org/package=ggrounded)
 <!-- badges: end -->
 
-A mini-package for creating bar plots with rounded corners using
-ggplot2.
+ggrounded creates bar plots with rounded corners using ggplot2.
 
 ## Installation
 
