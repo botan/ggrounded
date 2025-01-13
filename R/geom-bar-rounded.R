@@ -5,7 +5,7 @@ geom_bar_rounded <-
     mapping = NULL,
     data = NULL,
     position = ggplot2::position_stack(reverse = TRUE),
-    radius = grid::unit(4, "pt"),
+    radius = grid::unit(.1, "npc"),
     ...,
     width = NULL,
     na.rm = FALSE,

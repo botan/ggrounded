@@ -65,13 +65,25 @@ geom_col_rounded <-
     mapping = NULL,
     data = NULL,
     position = ggplot2::position_stack(reverse = TRUE),
-    radius = grid::unit(4, "pt"),
+    radius = grid::unit(.1, "npc"),
     ...,
     width = NULL,
     na.rm = FALSE,
     show.legend = NA,
     inherit.aes = TRUE
-  ) {
+  )
+  {
+    if(stringr::str_detect(radius,"npc")){
+      if(
+        as.numeric(
+          stringr::str_remove(radius,"npc")
+        ) > .5) {
+        radius =grid::unit(.5,"npc")
+        message("\nRadius is limited to values between 0 and 0.5 when using Normalised Parent Coordinates.\n")
+      }
+    }
+
+
     ggplot2::layer(
       data = data,
       mapping = mapping,
@@ -125,7 +137,7 @@ GeomColRounded <- ggplot2::ggproto(
     panel_params,
     coord,
     width = NULL,
-    radius = grid::unit(4, "pt")
+    radius = grid::unit(.1, "npc")
   ) {
     coords <- coord$transform(data, panel_params)
 
