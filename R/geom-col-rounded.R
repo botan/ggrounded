@@ -132,15 +132,14 @@ GeomColRounded <- ggplot2::ggproto(
     grobs <- lapply(
       seq_along(coords$xmin),
       function(i) {
-        is_negative <- data$y[i] < 0
-
-        # For the rectGrob, adjust the y position based on sign
+        # After position adjustments, `y` can be the bar boundary rather than
+        # the signed extent, so infer negativity from the interval.
+        is_negative <- data$ymin[i] < 0
+        rect_height <- (coords$ymax[i] - coords$ymin[i]) / 2
         rect_y <- if (is_negative) {
-          # top half for negatives
-          coords$ymin[i] + (coords$ymax[i] - coords$ymin[i]) / 2 
+          coords$ymin[i] + rect_height
         } else {
-           # bottom half for positives
-          coords$ymax[i] - (coords$ymax[i] - coords$ymin[i]) / 2 
+          coords$ymax[i] - rect_height
         }
 
         gridGeometry::polyclipGrob(
@@ -157,7 +156,7 @@ GeomColRounded <- ggplot2::ggproto(
             coords$xmin[i],
             rect_y,
             width = (coords$xmax[i] - coords$xmin[i]),
-            height = (coords$ymax[i] - coords$ymin[i]) / 2,
+            height = rect_height,
             default.units = "native",
             just = c("left", if (is_negative) "bottom" else "top")
           ),
