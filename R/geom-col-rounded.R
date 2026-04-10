@@ -106,6 +106,7 @@ GeomColRounded <- ggplot2::ggproto(
     linetype = 1,
     alpha = NA
   ),
+  extra_params = c("na.rm", "orientation"),
   required_aes = c("x", "y"),
   setup_params = function(data, params) {
     params$flipped_aes <- ggplot2::has_flipped_aes(data, params)
@@ -113,11 +114,15 @@ GeomColRounded <- ggplot2::ggproto(
   },
   non_missing_aes = c("xmin", "xmax", "ymin", "ymax"),
   setup_data = function(data, params) {
+    data$flipped_aes <- params$flipped_aes
+    data <- ggplot2::flip_data(data, params$flipped_aes)
+
     data$width <-
       data$width %||%
       params$width %||%
       (ggplot2::resolution(data$x, FALSE) * 0.9)
-    transform(
+
+    data <- transform(
       data,
       ymin = pmin(y, 0),
       ymax = pmax(y, 0),
@@ -125,6 +130,8 @@ GeomColRounded <- ggplot2::ggproto(
       xmax = x + width / 2,
       width = NULL
     )
+
+    ggplot2::flip_data(data, params$flipped_aes)
   },
   draw_panel = function(
     self,
@@ -132,8 +139,10 @@ GeomColRounded <- ggplot2::ggproto(
     panel_params,
     coord,
     width = NULL,
-    radius = 0.2
+    radius = 0.2,
+    flipped_aes = FALSE
   ) {
+    bar_data <- ggplot2::flip_data(data, flipped_aes)
     coords <- coord$transform(data, panel_params)
 
     grobs <- lapply(
@@ -141,7 +150,7 @@ GeomColRounded <- ggplot2::ggproto(
       function(i) {
         # After position adjustments, `y` can be the bar boundary rather than
         # the signed extent, so infer negativity from the interval.
-        is_negative <- data$ymin[i] < 0
+        is_negative <- bar_data$ymin[i] < 0
         bar_width <- coords$xmax[i] - coords$xmin[i]
         bar_height <- coords$ymax[i] - coords$ymin[i]
         bar_viewport <- grid::viewport(
