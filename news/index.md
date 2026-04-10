@@ -2,6 +2,12 @@
 
 ## ggrounded (development version)
 
+- Horizontal bars now round the terminal bar edge correctly for both
+  [`geom_col_rounded()`](https://botan.github.io/ggrounded/reference/geom_col_rounded.md)
+  and
+  [`geom_bar_rounded()`](https://botan.github.io/ggrounded/reference/geom_col_rounded.md).
+- README examples now include a horizontal rounded bar example.
+
 ## ggrounded 0.1.0
 
 - Breaking change: `radius` now uses normalized bar-relative values from

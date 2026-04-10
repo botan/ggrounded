@@ -72,11 +72,6 @@ Histograms can use rounded bins with
 ``` r
 ggplot(faithful, aes(waiting)) +
   geom_histogram_rounded(bins = 10)
-#> Warning: The `drop` argument of `stat_bin()` is deprecated as of ggplot2 2.1.0.
-#> ℹ Please use the `pad` argument instead.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
 ```
 
 ![](reference/figures/README-unnamed-chunk-4-1.png)
@@ -91,6 +86,20 @@ ggplot(data.frame(x = letters[1:4], y = c(2.3, -1.9, 3.2, -2.6)), aes(x, y)) +
 ```
 
 ![](reference/figures/README-example4-1.png)
+
+Horizontal bars are supported as well. In horizontal layouts, rounding
+follows the terminal bar edge rather than the baseline:
+
+``` r
+ggplot(
+  data.frame(category = letters[1:4], value = c(2.3, -1.9, 3.2, -2.6)),
+  aes(value, category)
+) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_col_rounded()
+```
+
+![](reference/figures/README-example5-1.png)
 
 ## Code of Conduct
 
