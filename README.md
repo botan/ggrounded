@@ -72,6 +72,15 @@ ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
 
 <img src="man/figures/README-example3-1.png" width="100%" />
 
+Histograms can use rounded bins with `geom_histogram_rounded()`:
+
+``` r
+ggplot(faithful, aes(waiting)) +
+  geom_histogram_rounded(bins = 10)
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
 Negative values are supported too. Bars above zero keep rounded top
 corners, while bars below zero round away from the baseline:
 
