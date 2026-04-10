@@ -77,6 +77,11 @@ Histograms can use rounded bins with `geom_histogram_rounded()`:
 ``` r
 ggplot(faithful, aes(waiting)) +
   geom_histogram_rounded(bins = 10)
+#> Warning: The `drop` argument of `stat_bin()` is deprecated as of ggplot2 2.1.0.
+#> ℹ Please use the `pad` argument instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
