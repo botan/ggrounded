@@ -143,6 +143,7 @@ GeomColRounded <- ggplot2::ggproto(
     flipped_aes = FALSE
   ) {
     bar_data <- ggplot2::flip_data(data, flipped_aes)
+    is_horizontal <- xor(isTRUE(flipped_aes), inherits(coord, "CoordFlip"))
     coords <- coord$transform(data, panel_params)
 
     grobs <- lapply(
@@ -170,7 +171,12 @@ GeomColRounded <- ggplot2::ggproto(
           lineend = "butt"
         )
 
-        bar_body <- rounded_bar_grob(radius, gp, negative = is_negative)
+        bar_body <- rounded_bar_grob(
+          radius,
+          gp,
+          negative = is_negative,
+          horizontal = is_horizontal
+        )
 
         grid::grobTree(bar_body, vp = bar_viewport)
       }
