@@ -1,5 +1,7 @@
 # Changelog
 
+## ggrounded (development version)
+
 ## ggrounded 0.1.0
 
 - Breaking change: `radius` now uses normalized bar-relative values from
