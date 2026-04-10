@@ -1,5 +1,9 @@
 # ggrounded (development version)
 
+* Horizontal bars now round the terminal bar edge correctly for both
+  `geom_col_rounded()` and `geom_bar_rounded()`.
+* README examples now include a horizontal rounded bar example.
+
 # ggrounded 0.1.0
 
 * Breaking change: `radius` now uses normalized bar-relative values from `0`

@@ -85,6 +85,18 @@ ggplot(data.frame(x = letters[1:4], y = c(2.3, -1.9, 3.2, -2.6)), aes(x, y)) +
   geom_col_rounded()
 ```
 
+Horizontal bars are supported as well. In horizontal layouts, rounding follows
+the terminal bar edge rather than the baseline:
+
+```{r example5}
+ggplot(
+  data.frame(category = letters[1:4], value = c(2.3, -1.9, 3.2, -2.6)),
+  aes(value, category)
+) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_col_rounded()
+```
+
 ## Code of Conduct
 
 Please note that the ggrounded is released with a [contributor code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). By contributing in this project you agree to abide by its terms.

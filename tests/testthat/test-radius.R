@@ -72,3 +72,40 @@ test_that("bar-relative radius is clamped by the smaller bar dimension", {
     tolerance = 1e-6
   )
 })
+
+test_that("rounded_bar_grob follows the displayed bar orientation", {
+  rounded_bar_grob <- getFromNamespace("rounded_bar_grob", "ggrounded")
+  gp <- grid::gpar(fill = "grey35", col = NA)
+
+  grid::pushViewport(
+    grid::viewport(
+      width = grid::unit(100, "mm"),
+      height = grid::unit(100, "mm")
+    )
+  )
+  on.exit(grid::popViewport(), add = TRUE)
+
+  vertical <- rounded_bar_grob(1, gp)
+  horizontal <- rounded_bar_grob(1, gp, horizontal = TRUE)
+  negative_horizontal <- rounded_bar_grob(1, gp, negative = TRUE, horizontal = TRUE)
+
+  vertical_x <- grid::convertX(vertical$x, "npc", TRUE)
+  vertical_y <- grid::convertY(vertical$y, "npc", TRUE)
+  horizontal_x <- grid::convertX(horizontal$x, "npc", TRUE)
+  horizontal_y <- grid::convertY(horizontal$y, "npc", TRUE)
+  negative_horizontal_x <- grid::convertX(negative_horizontal$x, "npc", TRUE)
+  negative_horizontal_y <- grid::convertY(negative_horizontal$y, "npc", TRUE)
+
+  expect_equal(vertical_x[2], 0, tolerance = 1e-6)
+  expect_equal(vertical_y[2], 0.5, tolerance = 1e-6)
+
+  expect_equal(horizontal_x[2], 0, tolerance = 1e-6)
+  expect_equal(horizontal_y[2], 1, tolerance = 1e-6)
+  expect_equal(horizontal_x[3], 0.5, tolerance = 1e-6)
+  expect_equal(horizontal_y[3], 1, tolerance = 1e-6)
+
+  expect_equal(negative_horizontal_x[1], 1, tolerance = 1e-6)
+  expect_equal(negative_horizontal_y[1], 0, tolerance = 1e-6)
+  expect_equal(negative_horizontal_x[3], 0.5, tolerance = 1e-6)
+  expect_equal(negative_horizontal_y[3], 1, tolerance = 1e-6)
+})
