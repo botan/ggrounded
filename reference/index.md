@@ -5,3 +5,5 @@
 - [`geom_bar_rounded()`](https://botan.github.io/ggrounded/reference/geom_col_rounded.md)
   [`geom_col_rounded()`](https://botan.github.io/ggrounded/reference/geom_col_rounded.md)
   : Bar plot with rounded corners
+- [`geom_histogram_rounded()`](https://botan.github.io/ggrounded/reference/geom_histogram_rounded.md)
+  : Histogram with rounded bars

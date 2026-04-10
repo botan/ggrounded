@@ -7,6 +7,8 @@
   [`grid::unit()`](https://rdrr.io/r/grid/unit.html) inputs.
 - Rounded corners now scale with each bar’s geometry and clamp
   automatically for dense bars, short bars, and negative bars.
+- [`geom_histogram_rounded()`](https://botan.github.io/ggrounded/reference/geom_histogram_rounded.md)
+  added for rounded histogram bins.
 
 ## ggrounded 0.0.3
 
