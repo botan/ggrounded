@@ -27,7 +27,9 @@
 #'   (e.g. `"jitter"` to use `position_jitter`), or the result of a call to a
 #'   position adjustment function. Use the latter if you need to change the
 #'   settings of the adjustment.
-#' @param radius The radius of the rounded corners, given as a unit object.
+#' @param radius A normalized rounding amount between 0 and 1. Use `0` for
+#'   square corners and `1` for the maximum rounding each bar can safely
+#'   support.
 #' @param ... Other arguments passed on to [ggplot2::layer()]. These are
 #'   often aesthetics, used to set an aesthetic to a fixed value, like
 #'   `colour = "red"` or `size = 3`. They may also be parameters
@@ -58,6 +60,9 @@
 #' ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
 #'   geom_col_rounded()
 #'
+#' ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+#'   geom_col_rounded(radius = 1)
+#'
 #' ggplot(mpg, aes(class)) +
 #'   geom_bar_rounded()
 geom_col_rounded <-
@@ -65,13 +70,15 @@ geom_col_rounded <-
     mapping = NULL,
     data = NULL,
     position = ggplot2::position_stack(reverse = TRUE),
-    radius = grid::unit(4, "pt"),
+    radius = 0.2,
     ...,
     width = NULL,
     na.rm = FALSE,
     show.legend = NA,
     inherit.aes = TRUE
   ) {
+    radius <- validate_radius(radius)
+
     ggplot2::layer(
       data = data,
       mapping = mapping,
@@ -125,7 +132,7 @@ GeomColRounded <- ggplot2::ggproto(
     panel_params,
     coord,
     width = NULL,
-    radius = grid::unit(4, "pt")
+    radius = 0.2
   ) {
     coords <- coord$transform(data, panel_params)
 
@@ -135,40 +142,28 @@ GeomColRounded <- ggplot2::ggproto(
         # After position adjustments, `y` can be the bar boundary rather than
         # the signed extent, so infer negativity from the interval.
         is_negative <- data$ymin[i] < 0
-        rect_height <- (coords$ymax[i] - coords$ymin[i]) / 2
-        rect_y <- if (is_negative) {
-          coords$ymin[i] + rect_height
-        } else {
-          coords$ymax[i] - rect_height
-        }
-
-        gridGeometry::polyclipGrob(
-          grid::roundrectGrob(
-            coords$xmin[i],
-            coords$ymax[i],
-            width = (coords$xmax[i] - coords$xmin[i]),
-            height = (coords$ymax[i] - coords$ymin[i]),
-            r = radius,
-            default.units = "native",
-            just = c("left", "top")
-          ),
-          grid::rectGrob(
-            coords$xmin[i],
-            rect_y,
-            width = (coords$xmax[i] - coords$xmin[i]),
-            height = rect_height,
-            default.units = "native",
-            just = c("left", if (is_negative) "bottom" else "top")
-          ),
-          op = "union",
-          gp = grid::gpar(
-            col = coords$colour[i],
-            fill = ggplot2::alpha(coords$fill[i], coords$alpha[i]),
-            lwd = coords$size[i] * ggplot2::.pt,
-            lty = coords$linetype[i],
-            lineend = "butt"
-          )
+        bar_width <- coords$xmax[i] - coords$xmin[i]
+        bar_height <- coords$ymax[i] - coords$ymin[i]
+        bar_viewport <- grid::viewport(
+          x = coords$xmin[i],
+          y = coords$ymax[i],
+          width = bar_width,
+          height = bar_height,
+          default.units = "native",
+          just = c("left", "top")
         )
+
+        gp <- grid::gpar(
+          col = coords$colour[i],
+          fill = ggplot2::alpha(coords$fill[i], coords$alpha[i]),
+          lwd = coords$size[i] * ggplot2::.pt,
+          lty = coords$linetype[i],
+          lineend = "butt"
+        )
+
+        bar_body <- rounded_bar_grob(radius, gp, negative = is_negative)
+
+        grid::grobTree(bar_body, vp = bar_viewport)
       }
     )
 

@@ -3,6 +3,8 @@ Title: Rounded Bar Plots
 Version: 0.0.3.9000
 Authors@R: 
     person("Botan", "Ağın", , "aginbotan@gmail.com", role = c("aut", "cre", "cph"))
+Author: Botan Ağın [aut, cre, cph]
+Maintainer: Botan Ağın <aginbotan@gmail.com>
 Description: Creates bar plots with rounded corners using 'ggplot2'.
     The code in this package was adapted from a solution provided by 
     Stack Overflow user 'sthoch' in the following post
@@ -10,11 +12,10 @@ Description: Creates bar plots with rounded corners using 'ggplot2'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: 
     ggplot2,
-    grid,
-    gridGeometry
+    grid
 URL: https://github.com/botan/ggrounded,
     https://botan.github.io/ggrounded/
 BugReports: https://github.com/botan/ggrounded/issues

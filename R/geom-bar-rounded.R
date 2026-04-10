@@ -5,13 +5,15 @@ geom_bar_rounded <-
     mapping = NULL,
     data = NULL,
     position = ggplot2::position_stack(reverse = TRUE),
-    radius = grid::unit(4, "pt"),
+    radius = 0.2,
     ...,
     width = NULL,
     na.rm = FALSE,
     show.legend = NA,
     inherit.aes = TRUE
   ) {
+    radius <- validate_radius(radius)
+
     ggplot2::layer(
       data = data,
       mapping = mapping,
