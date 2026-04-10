@@ -32,7 +32,7 @@ bar_arc_units <- function(center_x, center_y, radius, start, end, n = 12L) {
   )
 }
 
-rounded_bar_grob <- function(radius, gp, negative = FALSE) {
+rounded_bar_grob <- function(radius, gp, negative = FALSE, horizontal = FALSE) {
   if (isTRUE(all.equal(radius, 0))) {
     return(
       grid::rectGrob(
@@ -49,7 +49,75 @@ rounded_bar_grob <- function(radius, gp, negative = FALSE) {
 
   corner_radius <- resolve_bar_radius(radius)
 
-  if (negative) {
+  if (horizontal && negative) {
+    top_arc <- bar_arc_units(
+      corner_radius,
+      grid::unit(1, "npc") - corner_radius,
+      corner_radius,
+      pi / 2,
+      pi
+    )
+    bottom_arc <- bar_arc_units(
+      corner_radius,
+      corner_radius,
+      corner_radius,
+      pi,
+      3 * pi / 2
+    )
+
+    x <- grid::unit.c(
+      grid::unit(1, "npc"),
+      grid::unit(1, "npc"),
+      corner_radius,
+      top_arc$x[-1],
+      grid::unit(0, "npc"),
+      bottom_arc$x[-1],
+      grid::unit(1, "npc")
+    )
+    y <- grid::unit.c(
+      grid::unit(0, "npc"),
+      grid::unit(1, "npc"),
+      grid::unit(1, "npc"),
+      top_arc$y[-1],
+      corner_radius,
+      bottom_arc$y[-1],
+      grid::unit(0, "npc")
+    )
+  } else if (horizontal) {
+    top_arc <- bar_arc_units(
+      grid::unit(1, "npc") - corner_radius,
+      grid::unit(1, "npc") - corner_radius,
+      corner_radius,
+      pi / 2,
+      0
+    )
+    bottom_arc <- bar_arc_units(
+      grid::unit(1, "npc") - corner_radius,
+      corner_radius,
+      corner_radius,
+      0,
+      -pi / 2
+    )
+
+    x <- grid::unit.c(
+      grid::unit(0, "npc"),
+      grid::unit(0, "npc"),
+      grid::unit(1, "npc") - corner_radius,
+      top_arc$x[-1],
+      grid::unit(1, "npc"),
+      bottom_arc$x[-1],
+      grid::unit(0, "npc")
+    )
+    y <- grid::unit.c(
+      grid::unit(0, "npc"),
+      grid::unit(1, "npc"),
+      grid::unit(1, "npc"),
+      top_arc$y[-1],
+      corner_radius,
+      bottom_arc$y[-1],
+      grid::unit(0, "npc")
+    )
+  } else if (negative) {
     left_arc <- bar_arc_units(
       corner_radius,
       corner_radius,
