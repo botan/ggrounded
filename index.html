@@ -92,7 +92,12 @@
 <p>Histograms can use rounded bins with <code><a href="reference/geom_histogram_rounded.html">geom_histogram_rounded()</a></code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">faithful</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">waiting</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/geom_histogram_rounded.html">geom_histogram_rounded</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="reference/geom_histogram_rounded.html">geom_histogram_rounded</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: The `drop` argument of `stat_bin()` is deprecated as of ggplot2 2.1.0.</span></span>
+<span><span class="co">#&gt; ℹ Please use the `pad` argument instead.</span></span>
+<span><span class="co">#&gt; This warning is displayed once every 8 hours.</span></span>
+<span><span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span>
+<span><span class="co">#&gt; generated.</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 <p>Negative values are supported too. Bars above zero keep rounded top corners, while bars below zero round away from the baseline:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
