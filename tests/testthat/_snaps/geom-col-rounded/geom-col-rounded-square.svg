@@ -27,9 +27,9 @@
 </defs>
 <g clip-path='url(#cpMjcuOTB8NzE0LjUyfDIyLjc4fDU0NS4xMQ==)'>
 <rect x='27.90' y='22.78' width='686.62' height='522.33' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<polygon points='60.08,521.37 60.08,199.39 60.28,196.64 60.87,193.95 61.83,191.36 63.15,188.95 64.80,186.74 66.75,184.79 68.96,183.14 71.37,181.82 73.96,180.86 76.65,180.27 79.40,180.08 233.89,180.08 236.63,180.27 239.33,180.86 241.91,181.82 244.33,183.14 246.53,184.79 248.48,186.74 250.13,188.95 251.45,191.36 252.41,193.95 253.00,196.64 253.20,199.39 253.20,521.37 60.08,521.37 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
-<polygon points='274.65,521.37 274.65,258.74 274.85,255.99 275.44,253.30 276.40,250.72 277.72,248.30 279.37,246.10 281.32,244.15 283.52,242.50 285.94,241.18 288.52,240.21 291.22,239.63 293.96,239.43 448.45,239.43 451.20,239.63 453.90,240.21 456.48,241.18 458.90,242.50 461.10,244.15 463.05,246.10 464.70,248.30 466.02,250.72 466.98,253.30 467.57,255.99 467.77,258.74 467.77,521.37 274.65,521.37 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
-<polygon points='489.22,521.37 489.22,65.84 489.42,63.09 490.01,60.40 490.97,57.81 492.29,55.40 493.94,53.19 495.89,51.24 498.09,49.59 500.51,48.27 503.09,47.31 505.79,46.72 508.53,46.53 663.02,46.53 665.77,46.72 668.46,47.31 671.05,48.27 673.46,49.59 675.67,51.24 677.62,53.19 679.27,55.40 680.59,57.81 681.55,60.40 682.14,63.09 682.34,65.84 682.34,521.37 489.22,521.37 ' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
+<rect x='60.08' y='180.08' width='193.11' height='341.29' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
+<rect x='274.65' y='239.43' width='193.11' height='281.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
+<rect x='489.22' y='46.53' width='193.11' height='474.84' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #595959;' />
 <rect x='27.90' y='22.78' width='686.62' height='522.33' style='stroke-width: 1.07; stroke: #333333;' />
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
@@ -49,6 +49,6 @@
 <text x='585.78' y='556.10' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: sans;' textLength='4.40px' lengthAdjust='spacingAndGlyphs'>c</text>
 <text x='371.21' y='568.24' text-anchor='middle' style='font-size: 11.00px; font-family: sans;' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>x</text>
 <text transform='translate(13.05,283.95) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: sans;' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>y</text>
-<text x='27.90' y='14.56' style='font-size: 13.20px; font-family: sans;' textLength='107.14px' lengthAdjust='spacingAndGlyphs'>geom-col-rounded</text>
+<text x='27.90' y='14.56' style='font-size: 13.20px; font-family: sans;' textLength='151.91px' lengthAdjust='spacingAndGlyphs'>geom-col-rounded-square</text>
 </g>
 </svg>

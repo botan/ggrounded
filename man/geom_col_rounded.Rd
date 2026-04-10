@@ -9,7 +9,7 @@ geom_bar_rounded(
   mapping = NULL,
   data = NULL,
   position = ggplot2::position_stack(reverse = TRUE),
-  radius = grid::unit(4, "pt"),
+  radius = 0.2,
   ...,
   width = NULL,
   na.rm = FALSE,
@@ -21,7 +21,7 @@ geom_col_rounded(
   mapping = NULL,
   data = NULL,
   position = ggplot2::position_stack(reverse = TRUE),
-  radius = grid::unit(4, "pt"),
+  radius = 0.2,
   ...,
   width = NULL,
   na.rm = FALSE,
@@ -55,7 +55,9 @@ from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
 position adjustment function. Use the latter if you need to change the
 settings of the adjustment.}
 
-\item{radius}{The radius of the rounded corners, given as a unit object.}
+\item{radius}{A normalized rounding amount between 0 and 1. Use \code{0} for
+square corners and \code{1} for the maximum rounding each bar can safely
+support.}
 
 \item{...}{Other arguments passed on to \code{\link[ggplot2:layer]{ggplot2::layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
@@ -77,7 +79,7 @@ display.}
 \item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link[ggplot2:borders]{ggplot2::borders()}}.}
+the default plot specification, e.g. \code{\link[ggplot2:annotation_borders]{ggplot2::borders()}}.}
 }
 \value{
 A ggplot object.
@@ -97,6 +99,9 @@ library(ggplot2)
 
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
   geom_col_rounded()
+
+ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+  geom_col_rounded(radius = 1)
 
 ggplot(mpg, aes(class)) +
   geom_bar_rounded()
