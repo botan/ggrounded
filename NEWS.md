@@ -4,6 +4,7 @@
   to `1` instead of `grid::unit()` inputs.
 * Rounded corners now scale with each bar's geometry and clamp automatically
   for dense bars, short bars, and negative bars.
+* `geom_histogram_rounded()` added for rounded histogram bins.
 
 # ggrounded 0.0.3
 
