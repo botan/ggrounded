@@ -15,7 +15,7 @@ geom_bar_rounded(
   mapping = NULL,
   data = NULL,
   position = ggplot2::position_stack(reverse = TRUE),
-  radius = grid::unit(4, "pt"),
+  radius = 0.2,
   ...,
   width = NULL,
   na.rm = FALSE,
@@ -27,7 +27,7 @@ geom_col_rounded(
   mapping = NULL,
   data = NULL,
   position = ggplot2::position_stack(reverse = TRUE),
-  radius = grid::unit(4, "pt"),
+  radius = 0.2,
   ...,
   width = NULL,
   na.rm = FALSE,
@@ -73,7 +73,8 @@ geom_col_rounded(
 
 - radius:
 
-  The radius of the rounded corners, given as a unit object.
+  A normalized rounding amount between 0 and 1. Use `0` for square
+  corners and `1` for the maximum rounding each bar can safely support.
 
 - ...:
 
@@ -125,6 +126,10 @@ library(ggplot2)
 
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
   geom_col_rounded()
+
+
+ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+  geom_col_rounded(radius = 1)
 
 
 ggplot(mpg, aes(class)) +

@@ -32,6 +32,10 @@ makes the height of the bar proportional to the number of cases in each
 group (or if the `weight` aesthetic is supplied, the sum of the
 weights).
 
+The `radius` argument is a normalized value between `0` and `1`. Use `0`
+for square corners and `1` for the maximum rounding that each bar can
+safely support based on its own width and height.
+
 ``` r
 library(ggrounded)
 library(ggplot2)
@@ -52,6 +56,26 @@ ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
 ```
 
 ![](reference/figures/README-example2-1.png)
+
+Use larger `radius` values when you want a more pronounced rounded top:
+
+``` r
+ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
+  geom_col_rounded(radius = 1)
+```
+
+![](reference/figures/README-example3-1.png)
+
+Negative values are supported too. Bars above zero keep rounded top
+corners, while bars below zero round away from the baseline:
+
+``` r
+ggplot(data.frame(x = letters[1:4], y = c(2.3, -1.9, 3.2, -2.6)), aes(x, y)) +
+  geom_hline(yintercept = 0, linetype = "dotted") +
+  geom_col_rounded()
+```
+
+![](reference/figures/README-example4-1.png)
 
 ## Code of Conduct
 
