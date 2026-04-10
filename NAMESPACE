@@ -2,3 +2,4 @@
 
 export(geom_bar_rounded)
 export(geom_col_rounded)
+export(geom_histogram_rounded)
