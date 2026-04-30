@@ -55,6 +55,23 @@ geom_histogram_rounded <-
   ) {
     radius <- validate_radius(radius)
 
+    params <- list(
+      radius = radius,
+      na.rm = na.rm,
+      orientation = orientation,
+      binwidth = binwidth,
+      bins = bins,
+      center = center,
+      boundary = boundary,
+      closed = closed,
+      pad = pad,
+      breaks = breaks,
+      ...
+    )
+    if (!identical(drop, "none")) {
+      params$drop <- drop
+    }
+
     ggplot2::layer(
       data = data,
       mapping = mapping,
@@ -63,19 +80,6 @@ geom_histogram_rounded <-
       position = position,
       show.legend = show.legend,
       inherit.aes = inherit.aes,
-      params = list(
-        radius = radius,
-        na.rm = na.rm,
-        orientation = orientation,
-        binwidth = binwidth,
-        bins = bins,
-        center = center,
-        boundary = boundary,
-        closed = closed,
-        pad = pad,
-        breaks = breaks,
-        drop = drop,
-        ...
-      )
+      params = params
     )
   }
