@@ -2,6 +2,12 @@
 
 ## ggrounded (development version)
 
+- [`geom_histogram_rounded()`](https://botan.github.io/ggrounded/reference/geom_histogram_rounded.md)
+  no longer forwards deprecated `stat_bin(drop = )` defaults, removing
+  ggplot2 deprecation warnings in standard use.
+- Horizontal bar tests now coerce built `ymin`/`ymax` to numeric before
+  comparison to avoid failures from ggplot2’s `mapped_discrete` class
+  tagging.
 - Horizontal bars now round the terminal bar edge correctly for both
   [`geom_col_rounded()`](https://botan.github.io/ggrounded/reference/geom_col_rounded.md)
   and
@@ -9,6 +15,8 @@
 - README examples now include a horizontal rounded bar example.
 
 ## ggrounded 0.1.0
+
+CRAN release: 2026-04-10
 
 - Breaking change: `radius` now uses normalized bar-relative values from
   `0` to `1` instead of

@@ -7,12 +7,14 @@ ggrounded creates bar plots with rounded corners using ggplot2.
 Install the released version of ggrounded from CRAN:
 
 ``` r
+
 install.packages("ggrounded")
 ```
 
 Or install the development version from GitHub with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("botan/ggrounded")
 ```
@@ -37,6 +39,7 @@ for square corners and `1` for the maximum rounding that each bar can
 safely support based on its own width and height.
 
 ``` r
+
 library(ggrounded)
 library(ggplot2)
 
@@ -51,6 +54,7 @@ If you want the heights of the bars to represent values in the data, use
 instead.
 
 ``` r
+
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
   geom_col_rounded()
 ```
@@ -60,6 +64,7 @@ ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
 Use larger `radius` values when you want a more pronounced rounded top:
 
 ``` r
+
 ggplot(data.frame(x = letters[1:3], y = c(2.3, 1.9, 3.2)), aes(x, y)) +
   geom_col_rounded(radius = 1)
 ```
@@ -70,6 +75,7 @@ Histograms can use rounded bins with
 [`geom_histogram_rounded()`](https://botan.github.io/ggrounded/reference/geom_histogram_rounded.md):
 
 ``` r
+
 ggplot(faithful, aes(waiting)) +
   geom_histogram_rounded(bins = 10)
 ```
@@ -80,6 +86,7 @@ Negative values are supported too. Bars above zero keep rounded top
 corners, while bars below zero round away from the baseline:
 
 ``` r
+
 ggplot(data.frame(x = letters[1:4], y = c(2.3, -1.9, 3.2, -2.6)), aes(x, y)) +
   geom_hline(yintercept = 0, linetype = "dotted") +
   geom_col_rounded()
@@ -91,6 +98,7 @@ Horizontal bars are supported as well. In horizontal layouts, rounding
 follows the terminal bar edge rather than the baseline:
 
 ``` r
+
 ggplot(
   data.frame(category = letters[1:4], value = c(2.3, -1.9, 3.2, -2.6)),
   aes(value, category)
