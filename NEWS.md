@@ -1,4 +1,4 @@
-# ggrounded (development version)
+# ggrounded 0.2.0
 
 * `geom_histogram_rounded()` no longer forwards deprecated `stat_bin(drop = )`
   defaults, removing ggplot2 deprecation warnings in standard use.
