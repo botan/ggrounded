@@ -17,7 +17,7 @@ test_that("geom_bar_rounded() supports horizontal bars", {
 
   expect_true(all(built$xmin == 0))
   expect_true(all(built$xmax > 0))
-  expect_equal(built$ymin, seq_len(nrow(built)) - 0.45)
-  expect_equal(built$ymax, seq_len(nrow(built)) + 0.45)
+  expect_equal(as.numeric(built$ymin), seq_len(nrow(built)) - 0.45)
+  expect_equal(as.numeric(built$ymax), seq_len(nrow(built)) + 0.45)
   expect_s3_class(ggplot2::ggplotGrob(p_horizontal), "gtable")
 })

@@ -130,7 +130,6 @@ GeomColRounded <- ggplot2::ggproto(
       xmax = x + width / 2,
       width = NULL
     )
-
     ggplot2::flip_data(data, params$flipped_aes)
   },
   draw_panel = function(

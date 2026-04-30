@@ -1,5 +1,9 @@
 # ggrounded (development version)
 
+* `geom_histogram_rounded()` no longer forwards deprecated `stat_bin(drop = )`
+  defaults, removing ggplot2 deprecation warnings in standard use.
+* Horizontal bar tests now coerce built `ymin`/`ymax` to numeric before
+  comparison to avoid failures from ggplot2's `mapped_discrete` class tagging.
 * Horizontal bars now round the terminal bar edge correctly for both
   `geom_col_rounded()` and `geom_bar_rounded()`.
 * README examples now include a horizontal rounded bar example.

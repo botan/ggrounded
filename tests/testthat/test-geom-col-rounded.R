@@ -42,8 +42,8 @@ test_that("geom_col_rounded() supports horizontal bars", {
   expect_true(all(built$flipped_aes))
   expect_equal(built$xmin, pmin(df_horizontal$value, 0))
   expect_equal(built$xmax, pmax(df_horizontal$value, 0))
-  expect_equal(built$ymin, c(0.55, 1.55, 2.55))
-  expect_equal(built$ymax, c(1.45, 2.45, 3.45))
+  expect_equal(as.numeric(built$ymin), c(0.55, 1.55, 2.55))
+  expect_equal(as.numeric(built$ymax), c(1.45, 2.45, 3.45))
 })
 
 test_that("geom_col_rounded() draws horizontal negative bars", {
