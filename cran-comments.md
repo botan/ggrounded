@@ -5,7 +5,7 @@
 checking CRAN incoming feasibility ... [3s/13s] NOTE
 Maintainer: ‘Botan Ağın <aginbotan@gmail.com>’
 
-Version contains large components (0.0.3.9000)
+Version contains large components (0.1.0.9000)
 
 checking package dependencies ... NOTE
 Package suggested but not available for checking: ‘covr’
