@@ -1,6 +1,8 @@
 # Changelog
 
-## ggrounded (development version)
+## ggrounded 0.2.0
+
+CRAN release: 2026-05-01
 
 - [`geom_histogram_rounded()`](https://botan.github.io/ggrounded/reference/geom_histogram_rounded.md)
   no longer forwards deprecated `stat_bin(drop = )` defaults, removing
