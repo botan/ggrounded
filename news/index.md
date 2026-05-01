@@ -1,5 +1,7 @@
 # Changelog
 
+## ggrounded (development version)
+
 ## ggrounded 0.2.0
 
 CRAN release: 2026-05-01
