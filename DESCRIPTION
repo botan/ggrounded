@@ -5,9 +5,10 @@ Authors@R:
     person("Botan", "Ağın", , "aginbotan@gmail.com", role = c("aut", "cre", "cph"))
 Author: Botan Ağın [aut, cre, cph]
 Maintainer: Botan Ağın <aginbotan@gmail.com>
-Description: Creates bar plots with rounded corners using 'ggplot2'.
-    The code in this package was adapted from a solution provided by 
-    Stack Overflow user 'sthoch' in the following post
+Description: Provides 'ggplot2' extensions for bar plots and histograms
+    with adjustable rounded corners. Supports vertical and horizontal
+    bars, including negative values. The original implementation was
+    adapted from a solution by Stack Overflow user 'sthoch'
     <https://stackoverflow.com/questions/62176038/r-ggplot2-bar-chart-with-round-corners-on-top-of-bar>.
 License: MIT + file LICENSE
 Encoding: UTF-8
