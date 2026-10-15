@@ -14,6 +14,7 @@ coverage](https://codecov.io/gh/botan/ggrounded/branch/main/graph/badge.svg)](ht
 status](https://www.r-pkg.org/badges/version/ggrounded)](https://CRAN.R-project.org/package=ggrounded)
 [![Total CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/ggrounded)](https://CRAN.R-project.org/package=ggrounded)
 [![Monthly CRAN downloads](https://cranlogs.r-pkg.org/badges/last-month/ggrounded)](https://CRAN.R-project.org/package=ggrounded)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 <!-- badges: end -->
 
 ggrounded creates bar plots with rounded corners using ggplot2.
